@@ -5,16 +5,16 @@ lang: en
 template: docs
 sidebar: true
 ---
-
 ## Overview
 
 The purpose of this document is to provide a brief overview of how to integrate with EVM-compatible NewChain. For teams that already support ETH, supporting the NewChain chain is very simple, because NewChain has the same API as go-ethereum, you just need to populate NewChain's RPC, ChainID when building a transaction.
 
 You can find references for the NewChain API [here](https://github.com/newtonproject/newchain-sdk-example/blob/master/RPC_API_reference.md). 
 
-Functions such as querying balances, obtaining transaction records, and parsing blocks to obtain transaction records required by the exchange can be implemented by accessing the RPC API service provided by Newton or building a full node. The RPC service will set the access frequency due to limited resources. For scenarios with high-frequency requirements, it is recommended to deploy a full node.
-
+Functions such as querying balances, obtaining transaction records, and parsing blocks to obtain transaction records required by the exchange can be implemented by accessing the RPC API service provided by Newton or deploying a full node. The RPC service will set the access frequency due to limited resources. For scenarios with high-frequency requirements, it is recommended to deploy a full node.
 ## NewChain Network Information
+
+### **Newton Mainnet：**
 
 **RPC：**
 https://global.rpc.mainnet.newtonproject.org
@@ -24,7 +24,6 @@ https://global.rpc.mainnet.newtonproject.org
 
 **Block Explorer：**
 https://explorer.newtonproject.org
-
 ### **Newton Testnet：**
 
 **RPC：**
@@ -41,13 +40,11 @@ http://e.testnet.diynova.com
 
 **Faucet：**
 https://rpc1.newchain.newtonproject.org/faucet?address="address"
-
 ## Deploy a full node of the NewChain network
 
 Deploying a node tutorial is [here](https://www.newtonproject.org/en/developers/docs/run-a-node/).
 
 After deploying a full node, the historical transaction records of an account can be obtained by parsing historical blocks, and the transfer-in and transfer-out transactions of an address can be monitored in real time by parsing the latest block. Full nodes also provide an API for broadcasting transactions.
-
 ## Use NewChain RPC API service
 
 Developers can utilize NewChain Network EndPoints to interact with on-chain data and send different types of transactions to the blockchain network. The API follows the JSON-RPC standard, a stateless, lightweight Remote Procedure Call (RPC) protocol commonly used when interacting with blockchain networks.
@@ -56,13 +53,9 @@ Developers can utilize NewChain Network EndPoints to interact with on-chain data
 >Start by accessing the full set of API documentation for standard NewChain JSON-RPC calls. [https://github.com/newtonproject/newchain-sdk-example/blob/master/RPC_API_reference.md](https://github.com/newtonproject/newchain-sdk-example/blob/master/RPC_API_reference.md)
 
 You can use our provided Java SDK, newchain-web3.js, newchain_web3.py library to interact with your programming language. For the source code and documentation of NewChain SDK, see: [https://github.com/newtonproject/newchain-sdk-example](https://github.com/newtonproject/newchain-sdk-example)
-
 ## Simple tutorial
-
 ### Java SDK
-
 #### **RPC URL**
-
 ```java
 private final static String rpcUrl = "<input RPC server address>";
 ```
